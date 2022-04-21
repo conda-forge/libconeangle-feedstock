@@ -16,6 +16,8 @@ source:
 build:
   skip: true  # [py<38 or python_impl == 'pypy']
   script: {{ PYTHON }} -m pip install . -vv  # [unix]
+  script_env:  # [osx and arm64]
+    - SKBUILD_CONFIGURE_OPTIONS=-DWITH_QP_EXITCODE=1 -DWITH_QP_EXITCODE__TRYRUN_OUTPUT='' -DWITH_XDP_EXITCODE=1 -DWITH_XDP_EXITCODE__TRYRUN_OUTPUT=''  # [osx and arm64]
   script: {{ PYTHON }} -m pip install {{ name }}-{{ version }}-cp{{ CONDA_PY }}-cp{{ CONDA_PY }}-win_amd64.whl -vv  # [win]
   number: 2
 
