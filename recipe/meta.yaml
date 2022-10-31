@@ -19,7 +19,7 @@ build:
   script_env:  # [osx and arm64]
     - SKBUILD_CONFIGURE_OPTIONS=-Df18errorstop_EXITCODE=1 -Df18errorstop_EXITCODE__TRYRUN_OUTPUT=''  # [osx and arm64]  
   script: {{ PYTHON }} -m pip install {{ name }}-{{ version }}-cp{{ CONDA_PY }}-cp{{ CONDA_PY }}-win_amd64.whl -vv  # [win]
-  number: 2
+  number: 3
 
 requirements:
   build:
